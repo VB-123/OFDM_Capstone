@@ -1,0 +1,8 @@
+{
+    "lib": "libvart-dpu-runner.so",
+    "filename": "cnn_ofdm_estimator.xmodel",
+    "kernel": [
+        "subgraph_quant_conv2d"
+    ],
+    "target": "DPUCZDX8G_ISA1_B4096"
+}
