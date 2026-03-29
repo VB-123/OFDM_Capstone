@@ -100,7 +100,7 @@ def qam_mapping(bit_stream):
   return qam_symbols
   
   def random_bits(length):
-  return np.random.randint(0,2,length)
+      return np.random.randint(0,2,length)
 
 # currently this will only ever return a 612 x 14 resource grid
 def bit_stream_to_resource_grid(bit_stream):
@@ -122,11 +122,11 @@ def time_domain_symbols(resource_grid): #change the list name in OFDM Transmitte
   return time_domain_symbols
 
 def apply_cyclic_prefix(time_domain_symbols):
-  symbols_with_cp = []
-  for time_symbol in time_domain_symbols:
-      symbol_with_cp = np.concatenate([time_symbol[-CP_LENGTH:], time_symbol])
-      symbols_with_cp.append(symbol_with_cp)
-  return np.concatenate(symbols_with_cp)
+    symbols_with_cp = []
+    for time_symbol in time_domain_symbols:
+        symbol_with_cp = np.concatenate([time_symbol[-CP_LENGTH:], time_symbol])
+        symbols_with_cp.append(symbol_with_cp)
+    return np.concatenate(symbols_with_cp)
   
 def apply_multipath(path_datas, t_signal):
     Fs = NUM_SC * subcarrier_spacing
